@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #5E7AC4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      width: 320px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .header-logo img {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .menu-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 20px;
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .menu-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-order {
+      background: #ff3131;
+      color: white;
+    }
+
+    .btn-order:hover {
+      background: #d92626;
+    }
+
+    /* Style untuk tampilan lokasi (Hidden by default) */
+    #lokasi-view {
+      display: none;
+    }
+
+    .house-img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="glass-card">
+  <div id="main-menu">
+    <div class="header-logo">
+      <img src="logo.png" alt="Rembang Setrika Express">
+    </div>
+
+    <button class="menu-btn" onclick="showLocation()">📍 Lokasi</button>
+    
+    <a href="https://razzaqvip.github.io/rseorder/" class="menu-btn btn-order">🚀 Order</a>
+    
+    <a href="https://wa.me/628979346633" class="menu-btn">💬 Kritik & Saran</a>
+  </div>
+
+  <div id="lokasi-view">
+    <h3 style="color: white; margin-top: 0;">Workshop Kami</h3>
+    <img src="rumah.jpg" class="house-img" alt="Lokasi Rembang Setrika Express">
+    
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126.0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1234567890" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <button class="back-btn" onclick="showMenu()">← Kembali</button>
+  </div>
+</div>
+
+<script>
+  function showLocation() {
+    document.getElementById('main-menu').style.display = 'none';
+    document.getElementById('lokasi-view').style.display = 'block';
+  }
+
+  function showMenu() {
+    document.getElementById('main-menu').style.display = 'block';
+    document.getElementById('lokasi-view').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
